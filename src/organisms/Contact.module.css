@@ -1,0 +1,17 @@
+.contact {
+	padding: var(--space-9) var(--gutter);
+}
+
+.inner {
+	max-width: var(--content-width);
+	margin: 0 auto;
+}
+
+.list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+	gap: var(--space-5);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

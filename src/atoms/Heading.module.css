@@ -1,0 +1,24 @@
+.heading {
+	margin: 0;
+	font-family: var(--font-display);
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	text-wrap: balance;
+}
+
+.hero {
+	font-size: var(--text-hero);
+	line-height: var(--leading-tight);
+	letter-spacing: -0.05em;
+}
+
+.section {
+	font-size: var(--text-2xl);
+	line-height: var(--leading-snug);
+}
+
+.card {
+	font-size: var(--text-xl);
+	line-height: var(--leading-snug);
+	letter-spacing: -0.02em;
+}

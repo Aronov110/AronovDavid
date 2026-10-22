@@ -1,0 +1,16 @@
+.textLink {
+	display: inline-flex;
+	align-items: center;
+	min-height: var(--target-size);
+	color: var(--color-text);
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: var(--color-accent);
+	text-decoration-thickness: 0.15em;
+	text-underline-offset: 0.25em;
+	transition: color var(--duration-fast) var(--ease-out);
+}
+
+.textLink:hover {
+	color: var(--color-accent);
+}

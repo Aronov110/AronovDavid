@@ -1,31 +1,43 @@
-# React + TypeScript + Vite
+# David Aronov: portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A one-page portfolio built with React, TypeScript and Vite, deployed to GitHub Pages.
 
-Currently, two official plugins are available:
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Develop
 
-## React Compiler
+Requires Node 20.19+ (or 22.12+) and [Bun](https://bun.sh).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": ["react", "typescript", "oxc"],
-	"options": {
-		"typeAware": true
-	},
-	"rules": {
-		"react/rules-of-hooks": "error",
-		"react/only-export-components": ["warn", { "allowConstantExport": true }]
-	}
-}
+```sh
+bun install
+bun run dev        # start the dev server
+bun run lint       # Biome check
+bun run build      # type-check and build to dist/
+bun run preview    # serve the production build locally
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Edit the content
+
+All text on the page lives in [`src/lib/content.ts`](src/lib/content.ts). Components never hard-code copy. Anything marked as placeholder there should be replaced before the site is shared.
+
+## Structure
+
+Components follow Atomic Design. Each component keeps its CSS Module beside it.
+
+```
+src/tokens/       design tokens (colour, type, spacing, motion) as CSS variables
+src/atoms/        Heading, ButtonLink, TextLink, Tag, SkipLink
+src/molecules/    ProjectCard, ContactLink, SectionHeader
+src/organisms/    SiteHeader, Hero, About, Projects, Contact, SiteFooter, ErrorBoundary
+src/templates/    SiteLayout
+src/pages/        HomePage
+src/lib/          typed content and shared errors
+```
+
+## Deploy
+
+Pushes to `main` run `.github/workflows/deploy.yml`: install with a frozen lockfile, lint, audit, build, then publish `dist/` to GitHub Pages. The custom domain is kept by `public/CNAME`.
+
+## Notes
+
+- **Colour scheme:** the site follows the visitor's light/dark preference. Text and UI contrast is held to WCAG 2.2 AA in both themes.
+- **Content Security Policy:** GitHub Pages cannot send response headers, so the policy is injected as a `<meta>` tag at build time (see `vite.config.ts`). Headers such as `frame-ancestors` and HSTS cannot be set this way.
+- **Motion:** animations and smooth scrolling are disabled when the visitor prefers reduced motion.
