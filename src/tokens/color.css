@@ -1,0 +1,33 @@
+/* Dark is the default look; light applies when the OS asks for it.
+   Contrast of every text/background and UI pair is checked against WCAG 2.2 AA. */
+:root {
+	--color-bg: #0b0b12;
+	--color-surface: #14141f;
+	--color-surface-raised: #1b1b2a;
+	--color-border: #2c2c42;
+	--color-border-strong: #6e6e92;
+	--color-text: #f4f4fb;
+	--color-text-muted: #a8a8c4;
+	--color-accent: #c6ff3d;
+	--color-on-accent: #0b0b12;
+	--color-glow-a: rgba(198, 255, 61, 0.22);
+	--color-glow-b: rgba(124, 92, 255, 0.3);
+	color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-bg: #f7f6f2;
+		--color-surface: #fff;
+		--color-surface-raised: #efede7;
+		--color-border: #d9d6cc;
+		--color-border-strong: #7d7a8f;
+		--color-text: #14141f;
+		--color-text-muted: #56566e;
+		--color-accent: #4a28f0;
+		--color-on-accent: #fff;
+		--color-glow-a: rgba(74, 40, 240, 0.18);
+		--color-glow-b: rgba(255, 106, 160, 0.22);
+		color-scheme: light;
+	}
+}

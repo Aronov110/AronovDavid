@@ -1,0 +1,80 @@
+.hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 80vh;
+	padding: var(--space-9) var(--gutter);
+	overflow: hidden;
+}
+
+@supports (min-height: 1dvh) {
+	.hero {
+		min-height: 80dvh;
+	}
+}
+
+.content {
+	position: relative;
+	display: grid;
+	gap: var(--space-6);
+	justify-items: start;
+	width: 100%;
+	max-width: var(--content-width);
+	margin: 0 auto;
+}
+
+.tagline {
+	max-width: 36rem;
+	margin: 0;
+	color: var(--color-text-muted);
+	font-size: var(--text-lg);
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-4);
+}
+
+.glowA,
+.glowB {
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.glowA {
+	top: -20%;
+	right: -10%;
+	width: 60vmax;
+	height: 60vmax;
+	background: radial-gradient(circle, var(--color-glow-a), transparent 65%);
+}
+
+.glowB {
+	bottom: -30%;
+	left: -15%;
+	width: 55vmax;
+	height: 55vmax;
+	background: radial-gradient(circle, var(--color-glow-b), transparent 65%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.glowA {
+		animation: drift 18s ease-in-out infinite alternate;
+	}
+
+	.glowB {
+		animation: drift 24s ease-in-out infinite alternate-reverse;
+	}
+}
+
+@keyframes drift {
+	from {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+
+	to {
+		transform: translate3d(-6%, 8%, 0) scale(1.15);
+	}
+}

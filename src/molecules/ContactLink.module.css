@@ -1,0 +1,33 @@
+.contactLink {
+	display: grid;
+	gap: var(--space-1);
+	padding: var(--space-5) var(--space-6);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	background: var(--color-surface);
+	color: var(--color-text);
+	text-decoration: none;
+	transition:
+		transform var(--duration-base) var(--ease-out),
+		border-color var(--duration-base) var(--ease-out);
+}
+
+.contactLink:hover {
+	transform: translateY(-4px);
+	border-color: var(--color-accent);
+}
+
+.label {
+	color: var(--color-text-muted);
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.text {
+	font-family: var(--font-display);
+	font-size: var(--text-xl);
+	font-weight: 700;
+	overflow-wrap: anywhere;
+}
