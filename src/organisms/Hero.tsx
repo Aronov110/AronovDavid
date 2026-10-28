@@ -18,8 +18,8 @@ export function Hero({ name, tagline }: HeroProps) {
 				</Heading>
 				<p className={styles.tagline}>{tagline}</p>
 				<div className={styles.actions}>
-					<ButtonLink href="#projects" variant="primary">
-						See my work
+					<ButtonLink href="#about" variant="primary">
+						About me
 					</ButtonLink>
 					<ButtonLink href="#contact" variant="secondary">
 						Get in touch
