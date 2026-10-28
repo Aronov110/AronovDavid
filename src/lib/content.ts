@@ -22,15 +22,21 @@ export type AboutContent = {
 	readonly facts: readonly AboutFact[];
 };
 
+export type ContactItem = {
+	readonly label: string;
+	/** `mailto:` for email; anything else opens as an external link. */
+	readonly href: string;
+	/** Short visible text, e.g. a handle, rather than the whole URL. */
+	readonly text: string;
+};
+
 export type SiteContent = {
 	readonly name: string;
 	readonly tagline: string;
 	readonly about: AboutContent;
 	readonly projects: readonly Project[];
 	readonly contact: {
-		readonly github: string;
-		/** Rendered only when set. */
-		readonly email?: string;
+		readonly links: readonly ContactItem[];
 	};
 };
 
@@ -91,6 +97,32 @@ export const content: SiteContent = {
 		},
 	],
 	contact: {
-		github: "https://github.com/Aronov110",
+		links: [
+			{
+				label: "Email",
+				href: "mailto:Aronov110@gmail.com",
+				text: "Aronov110@gmail.com",
+			},
+			{
+				label: "LinkedIn",
+				href: "https://www.linkedin.com/in/david-aronov-5106582a7/",
+				text: "David Aronov",
+			},
+			{
+				label: "GitHub",
+				href: "https://github.com/Aronov110",
+				text: "Aronov110",
+			},
+			{
+				label: "X",
+				href: "https://x.com/aronov_david",
+				text: "@aronov_david",
+			},
+			{
+				label: "Instagram",
+				href: "https://www.instagram.com/david_aronov_/",
+				text: "@david_aronov_",
+			},
+		],
 	},
 };

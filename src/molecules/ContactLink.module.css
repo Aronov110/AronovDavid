@@ -27,7 +27,7 @@
 
 .text {
 	font-family: var(--font-display);
-	font-size: var(--text-xl);
+	font-size: var(--text-lg);
 	font-weight: 700;
 	overflow-wrap: anywhere;
 }
