@@ -7,7 +7,6 @@ const MAIN_ID = "main";
 
 const NAV_LINKS: readonly NavItem[] = [
 	{ href: "#about", label: "About" },
-	{ href: "#projects", label: "Projects" },
 	{ href: "#contact", label: "Contact" },
 ];
 
