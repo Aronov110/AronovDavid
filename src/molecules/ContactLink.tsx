@@ -1,3 +1,4 @@
+import { VisuallyHidden } from "../atoms/VisuallyHidden.tsx";
 import styles from "./ContactLink.module.css";
 
 type ContactLinkProps = {
@@ -5,23 +6,20 @@ type ContactLinkProps = {
 	readonly href: string;
 	/** Visible link text, e.g. the address or handle. */
 	readonly text: string;
-	readonly external?: boolean;
 };
 
-export function ContactLink({
-	label,
-	href,
-	text,
-	external = false,
-}: ContactLinkProps) {
+/** Always opens in a new tab, and says so to assistive technology. */
+export function ContactLink({ label, href, text }: ContactLinkProps) {
 	return (
 		<a
 			className={styles.contactLink}
 			href={href}
-			rel={external ? "noopener noreferrer" : undefined}
+			target="_blank"
+			rel="noopener noreferrer"
 		>
 			<span className={styles.label}>{label}</span>
 			<span className={styles.text}>{text}</span>
+			<VisuallyHidden>(opens in a new tab)</VisuallyHidden>
 		</a>
 	);
 }
