@@ -21,23 +21,16 @@ export function Contact({ contact }: ContactProps) {
 					title="Let's talk"
 				/>
 				<ul className={styles.list}>
-					<li>
-						<ContactLink
-							label="GitHub"
-							href={contact.github}
-							text={contact.github.replace("https://", "")}
-							external
-						/>
-					</li>
-					{contact.email === undefined ? null : (
-						<li>
+					{contact.links.map(({ label, href, text }) => (
+						<li key={href}>
 							<ContactLink
-								label="Email"
-								href={`mailto:${contact.email}`}
-								text={contact.email}
+								label={label}
+								href={href}
+								text={text}
+								external={!href.startsWith("mailto:")}
 							/>
 						</li>
-					)}
+					))}
 				</ul>
 			</div>
 		</section>
