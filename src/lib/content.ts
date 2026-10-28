@@ -38,13 +38,13 @@ export type SiteContent = {
  * Everything the page says about its owner lives here, so the site can be
  * updated without touching any component.
  *
- * PLACEHOLDER COPY: the hero tagline and the example project are still
- * placeholders. The name, GitHub link and About section are real.
+ * PLACEHOLDER COPY: only the example project is still a placeholder. The name,
+ * tagline, GitHub link and About section are real.
  */
 export const content: SiteContent = {
 	name: "David Aronov",
 	tagline:
-		"Placeholder tagline: one sentence about what you build. Edit src/lib/content.ts.",
+		"Software engineering graduate looking for a team to contribute to and grow with.",
 	about: {
 		statement: {
 			before: "I turn ",
