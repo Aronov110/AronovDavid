@@ -9,7 +9,7 @@ export function HomePage() {
 	return (
 		<SiteLayout name={content.name}>
 			<Hero name={content.name} tagline={content.tagline} />
-			<About paragraphs={content.about} />
+			<About about={content.about} />
 			<Projects projects={content.projects} />
 			<Contact contact={content.contact} />
 		</SiteLayout>
