@@ -23,12 +23,7 @@ export function Contact({ contact }: ContactProps) {
 				<ul className={styles.list}>
 					{contact.links.map(({ label, href, text }) => (
 						<li key={href}>
-							<ContactLink
-								label={label}
-								href={href}
-								text={text}
-								external={!href.startsWith("mailto:")}
-							/>
+							<ContactLink label={label} href={href} text={text} />
 						</li>
 					))}
 				</ul>

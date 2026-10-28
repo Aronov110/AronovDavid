@@ -24,7 +24,7 @@ export type AboutContent = {
 
 export type ContactItem = {
 	readonly label: string;
-	/** `mailto:` for email; anything else opens as an external link. */
+	/** Where the card links. Every contact link opens in a new tab. */
 	readonly href: string;
 	/** Short visible text, e.g. a handle, rather than the whole URL. */
 	readonly text: string;
@@ -39,6 +39,12 @@ export type SiteContent = {
 		readonly links: readonly ContactItem[];
 	};
 };
+
+const EMAIL = "Aronov110@gmail.com";
+
+/** Opens Gmail's compose window with `to` already filled in. */
+const gmailComposeUrl = (to: string): string =>
+	`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}`;
 
 /**
  * Everything the page says about its owner lives here, so the site can be
@@ -100,8 +106,8 @@ export const content: SiteContent = {
 		links: [
 			{
 				label: "Email",
-				href: "mailto:Aronov110@gmail.com",
-				text: "Aronov110@gmail.com",
+				href: gmailComposeUrl(EMAIL),
+				text: EMAIL,
 			},
 			{
 				label: "LinkedIn",
