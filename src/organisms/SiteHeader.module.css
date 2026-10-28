@@ -13,10 +13,9 @@
 
 .inner {
 	display: flex;
-	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--space-2) var(--space-5);
+	gap: var(--space-2) var(--space-4);
 	max-width: var(--content-width);
 	min-height: var(--header-height);
 	margin: 0 auto;
@@ -26,19 +25,30 @@
 .brand {
 	display: inline-flex;
 	align-items: center;
-	min-height: var(--target-size);
-	color: var(--color-text);
+	justify-content: center;
+	flex: none;
+	width: var(--target-size);
+	height: var(--target-size);
+	border-radius: var(--radius-sm);
+	background: var(--color-accent);
+	color: var(--color-on-accent);
 	font-family: var(--font-display);
-	font-size: var(--text-lg);
+	font-size: var(--text-base);
 	font-weight: 700;
 	letter-spacing: -0.02em;
 	text-decoration: none;
+	transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.brand:hover {
+	transform: translateY(-2px);
 }
 
 .list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space-1) var(--space-5);
+	justify-content: flex-end;
+	gap: var(--space-1) var(--space-4);
 	margin: 0;
 	padding: 0;
 	list-style: none;
