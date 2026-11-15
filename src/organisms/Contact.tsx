@@ -17,7 +17,7 @@ export function Contact({ contact }: ContactProps) {
 			<div className={styles.inner}>
 				<SectionHeader
 					id="contact-title"
-					eyebrow="02 / Contact"
+					eyebrow="03 / Contact"
 					title="Let's talk"
 				/>
 				<ul className={styles.list}>
