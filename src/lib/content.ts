@@ -2,7 +2,10 @@ export type Project = {
 	readonly title: string;
 	readonly description: string;
 	readonly tags: readonly string[];
+	/** The live project; the card title links here. */
 	readonly href: string;
+	/** Source code. Rendered right after the title link, opens in a new tab. */
+	readonly repoHref?: string;
 };
 
 export type AboutFact = {
@@ -50,8 +53,7 @@ const gmailComposeUrl = (to: string): string =>
  * Everything the page says about its owner lives here, so the site can be
  * updated without touching any component.
  *
- * PLACEHOLDER COPY: only the example project is still a placeholder. The name,
- * tagline, GitHub link and About section are real.
+ * All copy here is real: name, tagline, About section, Plotpal and contact links.
  */
 export const content: SiteContent = {
 	name: "David Aronov",
@@ -95,11 +97,20 @@ export const content: SiteContent = {
 	},
 	projects: [
 		{
-			title: "Example project (placeholder)",
+			title: "Plotpal",
 			description:
-				"This site: a React and TypeScript portfolio built with Vite and deployed to GitHub Pages. Replace this card with your own work.",
-			tags: ["React", "TypeScript", "Vite"],
-			href: "https://github.com/Aronov110/AronovDavid",
+				"Plotpal is a web app where writers of scripts and stories organise their work and use AI to find plot holes and get ideas.",
+			tags: [
+				"React",
+				"TypeScript",
+				"Vite",
+				"Fastify",
+				"PostgreSQL",
+				"Drizzle ORM",
+				"Claude API",
+			],
+			href: "https://plotpal-app.vercel.app/app",
+			repoHref: "https://github.com/Aronov110/Plotpal",
 		},
 	],
 	contact: {
